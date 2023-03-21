@@ -8,11 +8,11 @@ public final class SimpleFactory {
 
     private SimpleFactory() {}
 
-    public static SomeRepository getRepository(String param) {
-        if ("First".equals(param)) {
-            return new SomeRepositoryFirstImpl(param);
+    public static SomeRepository createRepository(String type) {
+        if ("First".equals(type)) {
+            return new SomeRepositoryFirstImpl(type);
         } else {
-            return new SomeRepositorySecondImpl(param);
+            return new SomeRepositorySecondImpl(type);
         }
     }
 

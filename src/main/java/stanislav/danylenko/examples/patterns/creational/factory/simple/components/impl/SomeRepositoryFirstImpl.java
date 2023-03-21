@@ -6,15 +6,15 @@ import stanislav.danylenko.examples.patterns.creational.factory.simple.component
 @Slf4j
 public class SomeRepositoryFirstImpl implements SomeRepository {
 
-    private final String config;
+    private final String type;
 
-    public SomeRepositoryFirstImpl(String config) {
-        this.config = config;
+    public SomeRepositoryFirstImpl(String type) {
+        this.type = type;
     }
 
     @Override
     public void print() {
-        log.info("First impl - " + config);
+        log.info("First impl - " + type);
     }
 
 }
