@@ -4,11 +4,11 @@ import lombok.extern.slf4j.Slf4j;
 import stanislav.danylenko.examples.patterns.creational.factory.simple.components.SimpleRepository;
 
 @Slf4j
-public class SimpleRepositoryFirstImpl implements SimpleRepository {
+public class SimpleRepositoryJdbcImpl implements SimpleRepository {
 
     private final String type;
 
-    public SimpleRepositoryFirstImpl(String type) {
+    public SimpleRepositoryJdbcImpl(String type) {
         this.type = type;
     }
 
