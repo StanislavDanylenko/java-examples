@@ -3,16 +3,16 @@ package stanislav.danylenko.examples.patterns.creational.factory.abstractfactory
 import stanislav.danylenko.examples.patterns.creational.factory.abstractfactory.components.Table;
 import stanislav.danylenko.examples.patterns.creational.factory.abstractfactory.components.Chair;
 import stanislav.danylenko.examples.patterns.creational.factory.abstractfactory.factory.SimpleFurnitureFactory;
-import stanislav.danylenko.examples.patterns.creational.factory.abstractfactory.factory.impl.SimpleFurnitureFactoryFirstImpl;
-import stanislav.danylenko.examples.patterns.creational.factory.abstractfactory.factory.impl.SimpleFurnitureFactorySecondImpl;
+import stanislav.danylenko.examples.patterns.creational.factory.abstractfactory.factory.impl.SimpleFurnitureFactoryPlainImpl;
+import stanislav.danylenko.examples.patterns.creational.factory.abstractfactory.factory.impl.SimpleFurnitureFactoryLuxuryImpl;
 
 public final class FurnitureFactory {
 
     public static SimpleFurnitureFactory getFactory(String type) {
         if ("First".equals(type)) {
-            return new SimpleFurnitureFactoryFirstImpl();
+            return new SimpleFurnitureFactoryPlainImpl();
         } else {
-            return new SimpleFurnitureFactorySecondImpl();
+            return new SimpleFurnitureFactoryLuxuryImpl();
         }
     }
 

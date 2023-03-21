@@ -2,20 +2,20 @@ package stanislav.danylenko.examples.patterns.creational.factory.abstractfactory
 
 import stanislav.danylenko.examples.patterns.creational.factory.abstractfactory.components.Table;
 import stanislav.danylenko.examples.patterns.creational.factory.abstractfactory.components.Chair;
-import stanislav.danylenko.examples.patterns.creational.factory.abstractfactory.components.table.TableSecondImpl;
-import stanislav.danylenko.examples.patterns.creational.factory.abstractfactory.components.chair.ChairSecondImpl;
+import stanislav.danylenko.examples.patterns.creational.factory.abstractfactory.components.table.TableLuxuryImpl;
+import stanislav.danylenko.examples.patterns.creational.factory.abstractfactory.components.chair.ChairLuxuryImpl;
 import stanislav.danylenko.examples.patterns.creational.factory.abstractfactory.factory.SimpleFurnitureFactory;
 
-public class SimpleFurnitureFactorySecondImpl implements SimpleFurnitureFactory {
+public class SimpleFurnitureFactoryLuxuryImpl implements SimpleFurnitureFactory {
 
     @Override
     public Table createTable() {
-        return new TableSecondImpl("Second");
+        return new TableLuxuryImpl("Luxury");
     }
 
     @Override
     public Chair createChair() {
-        return new ChairSecondImpl("Second");
+        return new ChairLuxuryImpl("Luxury");
     }
 
 }
