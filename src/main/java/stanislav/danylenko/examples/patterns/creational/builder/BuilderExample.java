@@ -14,6 +14,10 @@ public final class BuilderExample {
         this.date = date;
     }
 
+    public static Builder builder() {
+        return new Builder();
+    }
+
     public String getName() {
         return name;
     }
@@ -31,17 +35,19 @@ public final class BuilderExample {
         private Integer age;
         private Date date;
 
-        public Builder setName(String name) {
+        private Builder() {}
+
+        public Builder withName(String name) {
             this.name = name;
             return this;
         }
 
-        public Builder setAge(Integer age) {
+        public Builder withAge(Integer age) {
             this.age = age;
             return this;
         }
 
-        public Builder setDate(Date date) {
+        public Builder withDate(Date date) {
             this.date = date;
             return this;
         }
