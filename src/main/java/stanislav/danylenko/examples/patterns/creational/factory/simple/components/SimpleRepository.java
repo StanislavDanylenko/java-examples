@@ -2,6 +2,6 @@ package stanislav.danylenko.examples.patterns.creational.factory.simple.componen
 
 public interface SimpleRepository {
 
-    void print();
+    void load();
 
 }

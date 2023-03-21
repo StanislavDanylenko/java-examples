@@ -4,9 +4,9 @@ import stanislav.danylenko.examples.patterns.creational.factory.simple.component
 import stanislav.danylenko.examples.patterns.creational.factory.simple.components.impl.SimpleRepositoryFirstImpl;
 import stanislav.danylenko.examples.patterns.creational.factory.simple.components.impl.SimpleRepositorySecondImpl;
 
-public final class SimpleFactory {
+public final class RepositoryFactory {
 
-    private SimpleFactory() {}
+    private RepositoryFactory() {}
 
     public static SimpleRepository createRepository(String type) {
         if ("First".equals(type)) {

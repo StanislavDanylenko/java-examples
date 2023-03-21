@@ -13,7 +13,7 @@ public class SimpleRepositoryFirstImpl implements SimpleRepository {
     }
 
     @Override
-    public void print() {
+    public void load() {
         log.info("First impl - " + type);
     }
 
