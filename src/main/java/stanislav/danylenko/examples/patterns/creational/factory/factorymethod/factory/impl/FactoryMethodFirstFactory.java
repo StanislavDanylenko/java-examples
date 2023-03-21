@@ -4,7 +4,7 @@ import stanislav.danylenko.examples.patterns.creational.factory.factorymethod.co
 import stanislav.danylenko.examples.patterns.creational.factory.factorymethod.components.impl.FactoryMethodRepositorySecondImpl;
 import stanislav.danylenko.examples.patterns.creational.factory.factorymethod.factory.AbstractFactoryMethodFactory;
 
-public class FactoryMethodFirstFactory extends AbstractFactoryMethodFactory {
+public class FactoryMethodFirstFactory implements AbstractFactoryMethodFactory {
 
     @Override
     public FactoryMethodRepository createRepository() {

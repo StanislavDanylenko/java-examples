@@ -2,7 +2,7 @@ package stanislav.danylenko.examples.patterns.creational.factory.factorymethod.f
 
 import stanislav.danylenko.examples.patterns.creational.factory.factorymethod.components.FactoryMethodRepository;
 
-public abstract class AbstractFactoryMethodFactory {
+public interface AbstractFactoryMethodFactory {
 
     public abstract FactoryMethodRepository createRepository();
 
