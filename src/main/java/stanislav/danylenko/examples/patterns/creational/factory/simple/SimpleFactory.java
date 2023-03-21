@@ -1,18 +1,18 @@
 package stanislav.danylenko.examples.patterns.creational.factory.simple;
 
-import stanislav.danylenko.examples.patterns.creational.factory.simple.components.SomeRepository;
-import stanislav.danylenko.examples.patterns.creational.factory.simple.components.impl.SomeRepositoryFirstImpl;
-import stanislav.danylenko.examples.patterns.creational.factory.simple.components.impl.SomeRepositorySecondImpl;
+import stanislav.danylenko.examples.patterns.creational.factory.simple.components.SimpleRepository;
+import stanislav.danylenko.examples.patterns.creational.factory.simple.components.impl.SimpleRepositoryFirstImpl;
+import stanislav.danylenko.examples.patterns.creational.factory.simple.components.impl.SimpleRepositorySecondImpl;
 
 public final class SimpleFactory {
 
     private SimpleFactory() {}
 
-    public static SomeRepository createRepository(String type) {
+    public static SimpleRepository createRepository(String type) {
         if ("First".equals(type)) {
-            return new SomeRepositoryFirstImpl(type);
+            return new SimpleRepositoryFirstImpl(type);
         } else {
-            return new SomeRepositorySecondImpl(type);
+            return new SimpleRepositorySecondImpl(type);
         }
     }
 
