@@ -8,10 +8,10 @@ public final class BuilderExample {
     private final Integer age;
     private final Date date;
 
-    private BuilderExample(String name, Integer age, Date date) {
-        this.name = name;
-        this.age = age;
-        this.date = date;
+    private BuilderExample(Builder builder) {
+        this.name = builder.name;
+        this.age = builder.age;
+        this.date = builder.date;
     }
 
     public static Builder builder() {
@@ -53,7 +53,7 @@ public final class BuilderExample {
         }
 
         public BuilderExample build() {
-            return new BuilderExample(this.name, this.age, this.date);
+            return new BuilderExample(this);
         }
     }
 
