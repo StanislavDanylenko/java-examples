@@ -14,7 +14,7 @@ public class SimpleRepositoryJdbcImpl implements SimpleRepository {
 
     @Override
     public void load() {
-        log.info("First impl - " + type);
+        log.info("Jdbc impl - " + type);
     }
 
 }

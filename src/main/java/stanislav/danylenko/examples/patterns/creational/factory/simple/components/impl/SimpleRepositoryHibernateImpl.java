@@ -14,7 +14,7 @@ public class SimpleRepositoryHibernateImpl implements SimpleRepository {
 
     @Override
     public void load() {
-        log.info("Second impl - " + type);
+        log.info("Hibernate impl - " + type);
     }
 
 }
