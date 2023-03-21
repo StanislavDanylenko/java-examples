@@ -1,7 +1,7 @@
 package stanislav.danylenko.examples.patterns.creational.factory.abstractfactory.components;
 
-public interface AbstractFactoryRepository {
+public interface Table {
 
-    void print();
+    void putOn();
 
 }

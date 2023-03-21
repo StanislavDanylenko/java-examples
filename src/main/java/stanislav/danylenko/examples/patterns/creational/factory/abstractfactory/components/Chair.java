@@ -1,7 +1,7 @@
 package stanislav.danylenko.examples.patterns.creational.factory.abstractfactory.components;
 
-public interface AbstractFactoryUtil {
+public interface Chair {
 
-    void configure();
+    void sitOn();
 
 }
