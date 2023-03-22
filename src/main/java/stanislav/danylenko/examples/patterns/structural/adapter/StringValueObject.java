@@ -1,4 +1,4 @@
-package stanislav.danylenko.examples.patterns.structural.adapter.obj;
+package stanislav.danylenko.examples.patterns.structural.adapter;
 
 public interface StringValueObject {
 

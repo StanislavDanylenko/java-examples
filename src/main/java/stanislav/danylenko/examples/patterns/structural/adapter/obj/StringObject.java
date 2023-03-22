@@ -1,6 +1,6 @@
-package stanislav.danylenko.examples.patterns.structural.adapter.obj.impl.objs;
+package stanislav.danylenko.examples.patterns.structural.adapter.obj;
 
-import stanislav.danylenko.examples.patterns.structural.adapter.obj.StringValueObject;
+import stanislav.danylenko.examples.patterns.structural.adapter.StringValueObject;
 
 public class StringObject implements StringValueObject {
 

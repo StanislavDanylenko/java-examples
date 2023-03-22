@@ -1,6 +1,6 @@
-package stanislav.danylenko.examples.patterns.structural.adapter.obj.impl.objs;
+package stanislav.danylenko.examples.patterns.structural.adapter.obj;
 
-public final class IntObject { // 3d party
+public class IntObject { // 3d party
 
     private final Integer value;
 
