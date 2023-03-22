@@ -14,7 +14,7 @@ public class Main {
         );
         Integer integerVal = serializationFacade.fromXml("1", Integer.class);
         Double doubleVal = serializationFacade.fromXml("2.0", Double.class);
-        Long longVal = serializationFacade.fromJson("55555555555555555555555L", Long.class);
+        Long longVal = serializationFacade.fromJson("9223372036854775807", Long.class);
 
     }
 
