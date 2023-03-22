@@ -1,9 +1,9 @@
 package stanislav.danylenko.examples.patterns.structural.adapter.obj.impl;
 
-import stanislav.danylenko.examples.patterns.structural.adapter.obj.IntObject;
-import stanislav.danylenko.examples.patterns.structural.adapter.obj.StringObject;
+import stanislav.danylenko.examples.patterns.structural.adapter.obj.StringValueObject;
+import stanislav.danylenko.examples.patterns.structural.adapter.obj.impl.objs.IntObject;
 
-public class IntObjectAdapter extends StringObject {
+public class IntObjectAdapter implements StringValueObject {
 
     private final IntObject intObject;
 
@@ -13,6 +13,6 @@ public class IntObjectAdapter extends StringObject {
 
     @Override
     public String getStringValue() {
-        return intObject.toString();
+        return intObject.getIntValue().toString();
     }
 }
