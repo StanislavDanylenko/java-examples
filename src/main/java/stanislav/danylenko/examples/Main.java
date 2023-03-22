@@ -4,18 +4,29 @@ import lombok.extern.slf4j.Slf4j;
 import stanislav.danylenko.examples.patterns.structural.facade.serialization.SerializationFacade;
 import stanislav.danylenko.examples.patterns.structural.facade.serialization.components.JsonDeserializer;
 import stanislav.danylenko.examples.patterns.structural.facade.serialization.components.ToXmlSerializer;
+import stanislav.danylenko.examples.patterns.structural.proxy.SensitiveService;
+import stanislav.danylenko.examples.patterns.structural.proxy.components.AuthUser;
+import stanislav.danylenko.examples.patterns.structural.proxy.components.Role;
+import stanislav.danylenko.examples.patterns.structural.proxy.impl.SensitiveServiceImpl;
+import stanislav.danylenko.examples.patterns.structural.proxy.impl.SensitiveServiceProxy;
 
 @Slf4j
 public class Main {
 
     public static void main(String[] args) {
-        SerializationFacade serializationFacade = new SerializationFacade(
-                new JsonDeserializer(), new ToXmlSerializer()
-        );
-        Integer integerVal = serializationFacade.fromXml("1", Integer.class);
-        Double doubleVal = serializationFacade.fromXml("2.0", Double.class);
-        Long longVal = serializationFacade.fromJson("9223372036854775807", Long.class);
+        AuthUser user = new AuthUser("user", Role.USER);
+        AuthUser admin = new AuthUser("admin", Role.ADMIN);
 
+        String userMessage = "aaa";
+        String adminMessage = "bbb";
+
+        SensitiveService sensitiveService = new SensitiveServiceProxy();
+        sensitiveService.create(user, userMessage);
+        sensitiveService.create(admin, adminMessage);
+        sensitiveService.delete(user, userMessage);
+        sensitiveService.delete(admin, adminMessage);
+
+        log.info("end");
     }
 
 }
