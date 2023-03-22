@@ -2,8 +2,8 @@ package stanislav.danylenko.examples.patterns.creational.factory.abstractfactory
 
 import stanislav.danylenko.examples.patterns.creational.factory.abstractfactory.components.Table;
 import stanislav.danylenko.examples.patterns.creational.factory.abstractfactory.components.Chair;
-import stanislav.danylenko.examples.patterns.creational.factory.abstractfactory.components.table.TablePlainImpl;
-import stanislav.danylenko.examples.patterns.creational.factory.abstractfactory.components.chair.ChairPlainImpl;
+import stanislav.danylenko.examples.patterns.creational.factory.abstractfactory.components.impl.table.TablePlainImpl;
+import stanislav.danylenko.examples.patterns.creational.factory.abstractfactory.components.impl.chair.ChairPlainImpl;
 import stanislav.danylenko.examples.patterns.creational.factory.abstractfactory.factory.SimpleFurnitureFactory;
 
 public class SimpleFurnitureFactoryPlainImpl implements SimpleFurnitureFactory {

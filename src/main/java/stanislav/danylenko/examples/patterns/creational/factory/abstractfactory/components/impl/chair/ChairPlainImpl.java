@@ -1,4 +1,4 @@
-package stanislav.danylenko.examples.patterns.creational.factory.abstractfactory.components.chair;
+package stanislav.danylenko.examples.patterns.creational.factory.abstractfactory.components.impl.chair;
 
 import lombok.extern.slf4j.Slf4j;
 import stanislav.danylenko.examples.patterns.creational.factory.abstractfactory.components.Chair;
