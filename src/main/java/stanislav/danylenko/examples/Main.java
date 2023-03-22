@@ -1,6 +1,10 @@
 package stanislav.danylenko.examples;
 
 import lombok.extern.slf4j.Slf4j;
+import stanislav.danylenko.examples.patterns.structural.adapter.obj.IntObject;
+import stanislav.danylenko.examples.patterns.structural.adapter.obj.Processor;
+import stanislav.danylenko.examples.patterns.structural.adapter.obj.StringObject;
+import stanislav.danylenko.examples.patterns.structural.adapter.obj.impl.IntObjectAdapter;
 import stanislav.danylenko.examples.patterns.structural.facade.serialization.SerializationFacade;
 import stanislav.danylenko.examples.patterns.structural.facade.serialization.components.JsonDeserializer;
 import stanislav.danylenko.examples.patterns.structural.facade.serialization.components.ToXmlSerializer;
@@ -14,19 +18,15 @@ import stanislav.danylenko.examples.patterns.structural.proxy.impl.SensitiveServ
 public class Main {
 
     public static void main(String[] args) {
-        AuthUser user = new AuthUser("user", Role.USER);
-        AuthUser admin = new AuthUser("admin", Role.ADMIN);
+        Processor processor = new Processor();
 
-        String userMessage = "aaa";
-        String adminMessage = "bbb";
+        StringObject stringObject = new StringObject("asdasdsad");
+        IntObject intObject = new IntObject(5);
 
-        SensitiveService sensitiveService = new SensitiveServiceProxy();
-        sensitiveService.create(user, userMessage);
-        sensitiveService.create(admin, adminMessage);
-        sensitiveService.delete(user, userMessage);
-        sensitiveService.delete(admin, adminMessage);
-
-        log.info("end");
+        processor.process(stringObject.getStringValue());
+//        processor.process(intObject.getIntValue());
+        IntObjectAdapter intObjectAdapter = new IntObjectAdapter(intObject);
+        processor.process(intObjectAdapter.getStringValue());
     }
 
 }
