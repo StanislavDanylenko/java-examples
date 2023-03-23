@@ -1,21 +1,21 @@
 package stanislav.danylenko.examples;
 
+import java.util.Iterator;
+
 import lombok.extern.slf4j.Slf4j;
-import stanislav.danylenko.examples.patterns.behavior.iterator.my.MyEntity;
-import stanislav.danylenko.examples.patterns.behavior.iterator.my.MyIterator;
-import stanislav.danylenko.examples.patterns.behavior.iterator.my.impl.IterableEntityImpl;
+import stanislav.danylenko.examples.patterns.behavior.iterator.javaimpl.ReverseOrderList;
 
 @Slf4j
 public class Main {
 
     public static void main(String[] args) {
-        MyEntity entity = new IterableEntityImpl();
-        entity.addValue("Hello");
-        entity.addValue("World");
+        ReverseOrderList<String> list = new ReverseOrderList<>();
+        list.add("1");
+        list.add("2");
+        list.add("3");
 
-        MyIterator iterator = entity.createIterator();
-        while (iterator.hasMore()) {
-            log.info("Val: {}", iterator.getNext());
+        for (String s : list) {
+            log.info("Val: {}", s);
         }
     }
 
