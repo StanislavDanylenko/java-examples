@@ -1,5 +1,4 @@
 package stanislav.danylenko.examples.patterns.behavior.strategy.obj;
 
-public enum MyType {
-    K8S, AWS
+public record ActionMessage(String action, MessageType messageType) {
 }

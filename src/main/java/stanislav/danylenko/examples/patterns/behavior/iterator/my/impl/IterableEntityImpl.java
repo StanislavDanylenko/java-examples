@@ -3,10 +3,10 @@ package stanislav.danylenko.examples.patterns.behavior.iterator.my.impl;
 import java.util.ArrayList;
 import java.util.List;
 
-import stanislav.danylenko.examples.patterns.behavior.iterator.my.MyEntity;
-import stanislav.danylenko.examples.patterns.behavior.iterator.my.MyIterator;
+import stanislav.danylenko.examples.patterns.behavior.iterator.my.CustomEntity;
+import stanislav.danylenko.examples.patterns.behavior.iterator.my.CustomIterator;
 
-public class IterableEntityImpl implements MyEntity {
+public class IterableEntityImpl implements CustomEntity {
 
     private final List<String> values = new ArrayList<>();
 
@@ -21,7 +21,7 @@ public class IterableEntityImpl implements MyEntity {
     }
 
     @Override
-    public MyIterator createIterator() {
+    public CustomIterator createIterator() {
         return new IterableEntityImplIterator(this);
     }
 

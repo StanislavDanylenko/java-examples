@@ -1,6 +1,6 @@
 package stanislav.danylenko.examples.patterns.behavior.iterator.my;
 
-public interface MyIterator {
+public interface CustomIterator {
 
     boolean hasMore();
     String getNext();
