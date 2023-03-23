@@ -1,20 +1,22 @@
 package stanislav.danylenko.examples;
 
 import lombok.extern.slf4j.Slf4j;
-import stanislav.danylenko.examples.patterns.behavior.strategy.MyContext;
-import stanislav.danylenko.examples.patterns.behavior.strategy.impl.AwsStrategyImpl;
-import stanislav.danylenko.examples.patterns.behavior.strategy.impl.K8sStrategyImpl;
-import stanislav.danylenko.examples.patterns.behavior.strategy.obj.MyAction;
-import stanislav.danylenko.examples.patterns.behavior.strategy.obj.MyType;
+import stanislav.danylenko.examples.patterns.behavior.iterator.IterableEntity;
+import stanislav.danylenko.examples.patterns.behavior.iterator.MyIterator;
+import stanislav.danylenko.examples.patterns.behavior.iterator.impl.IterableEntityImpl;
 
 @Slf4j
 public class Main {
 
     public static void main(String[] args) {
-        MyAction action = new MyAction("asdasd", MyType.K8S);
+        IterableEntity entity = new IterableEntityImpl();
+        entity.addValue("Hello");
+        entity.addValue("World");
 
-        MyContext context = new MyContext(new AwsStrategyImpl(), new K8sStrategyImpl());
-        context.process(action);
+        MyIterator iterator = entity.createIterator();
+        while (iterator.hasMore()) {
+            log.info("Val: {}", iterator.getNext());
+        }
     }
 
 }
