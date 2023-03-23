@@ -14,9 +14,17 @@ public class Main {
         list.add("2");
         list.add("3");
 
-        for (String s : list) {
-            log.info("Val: {}", s);
+        Iterator<String> iterator = list.iterator();
+        while (iterator.hasNext()) {
+            String next = iterator.next();
+            log.info("Val: {}", next);
+            if ("1".equals(next)) {
+                iterator.remove();
+            }
         }
+
+        log.info("Size: {}", list.size());
+        log.info("List: {}", list);
     }
 
 }

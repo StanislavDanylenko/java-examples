@@ -23,8 +23,17 @@ public class ReverseOrderList<T> implements Iterable<T> {
         return list.get(index);
     }
 
+    public void delete(int index) {
+        list.remove(index);
+    }
+
     @Override
     public Iterator<T> iterator() {
         return new ReverseOrderIterator<>(this);
+    }
+
+    @Override
+    public String toString() {
+        return "ReversedList={" + list.toString() + "}";
     }
 }
