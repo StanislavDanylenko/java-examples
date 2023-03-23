@@ -1,22 +1,27 @@
 package stanislav.danylenko.examples;
 
 import lombok.extern.slf4j.Slf4j;
-import stanislav.danylenko.examples.patterns.behavior.observer.impl.Bank;
-import stanislav.danylenko.examples.patterns.behavior.observer.impl.CurrencyProvider;
+import stanislav.danylenko.examples.patterns.behavior.command.TextCommand;
+import stanislav.danylenko.examples.patterns.behavior.command.TextCommandExecutor;
+import stanislav.danylenko.examples.patterns.behavior.command.TextObject;
+import stanislav.danylenko.examples.patterns.behavior.command.impl.CleanCommand;
+import stanislav.danylenko.examples.patterns.behavior.command.impl.ReplaceCommand;
+import stanislav.danylenko.examples.patterns.behavior.command.impl.TextObjectImpl;
 
 @Slf4j
 public class Main {
 
     public static void main(String[] args) {
-        CurrencyProvider provider = new CurrencyProvider();
-        Bank bank1 = new Bank();
-        Bank bank2 = new Bank();
+        TextObject textObject = new TextObjectImpl("blablabla");
 
-        provider.registerObserver(bank1);
-        provider.registerObserver(bank2);
+        TextCommand textCommand1 = new CleanCommand(textObject, "a");
+        TextCommand textCommand2 = new ReplaceCommand(textObject, "b", "c");
 
-        provider.updateUsd(1.25);
-        provider.updateEur(4.25);
+        TextCommandExecutor executor = new TextCommandExecutor();
+        String res1 = executor.executeTextCommand(textCommand1);
+        String res2 = executor.executeTextCommand(textCommand2);
+        // anonymus
+        String res3 = executor.executeTextCommand(() -> textObject.getClass() + "");
     }
 
 }
