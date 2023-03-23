@@ -1,4 +1,4 @@
-package stanislav.danylenko.examples.patterns.behavior.iterator;
+package stanislav.danylenko.examples.patterns.behavior.iterator.my;
 
 public interface MyIterator {
 

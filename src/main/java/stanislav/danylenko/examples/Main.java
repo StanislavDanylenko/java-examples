@@ -1,15 +1,15 @@
 package stanislav.danylenko.examples;
 
 import lombok.extern.slf4j.Slf4j;
-import stanislav.danylenko.examples.patterns.behavior.iterator.IterableEntity;
-import stanislav.danylenko.examples.patterns.behavior.iterator.MyIterator;
-import stanislav.danylenko.examples.patterns.behavior.iterator.impl.IterableEntityImpl;
+import stanislav.danylenko.examples.patterns.behavior.iterator.my.MyEntity;
+import stanislav.danylenko.examples.patterns.behavior.iterator.my.MyIterator;
+import stanislav.danylenko.examples.patterns.behavior.iterator.my.impl.IterableEntityImpl;
 
 @Slf4j
 public class Main {
 
     public static void main(String[] args) {
-        IterableEntity entity = new IterableEntityImpl();
+        MyEntity entity = new IterableEntityImpl();
         entity.addValue("Hello");
         entity.addValue("World");
 
