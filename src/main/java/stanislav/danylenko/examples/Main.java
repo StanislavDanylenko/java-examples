@@ -1,30 +1,22 @@
 package stanislav.danylenko.examples;
 
-import java.util.Iterator;
-
 import lombok.extern.slf4j.Slf4j;
-import stanislav.danylenko.examples.patterns.behavior.iterator.javaimpl.ReverseOrderList;
+import stanislav.danylenko.examples.patterns.behavior.observer.impl.Bank;
+import stanislav.danylenko.examples.patterns.behavior.observer.impl.CurrencyProvider;
 
 @Slf4j
 public class Main {
 
     public static void main(String[] args) {
-        ReverseOrderList<String> list = new ReverseOrderList<>();
-        list.add("1");
-        list.add("2");
-        list.add("3");
+        CurrencyProvider provider = new CurrencyProvider();
+        Bank bank1 = new Bank();
+        Bank bank2 = new Bank();
 
-        Iterator<String> iterator = list.iterator();
-        while (iterator.hasNext()) {
-            String next = iterator.next();
-            log.info("Val: {}", next);
-            if ("1".equals(next)) {
-                iterator.remove();
-            }
-        }
+        provider.registerObserver(bank1);
+        provider.registerObserver(bank2);
 
-        log.info("Size: {}", list.size());
-        log.info("List: {}", list);
+        provider.updateUsd(1.25);
+        provider.updateEur(4.25);
     }
 
 }
