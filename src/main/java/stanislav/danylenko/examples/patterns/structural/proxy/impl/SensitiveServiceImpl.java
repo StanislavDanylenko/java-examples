@@ -10,17 +10,24 @@ import java.util.List;
 @Slf4j
 public class SensitiveServiceImpl implements SensitiveService {
 
-    private static final List<String> RECORDS = new ArrayList<>();
+    private static final List<String> VALUES = new ArrayList<>();
 
     @Override
-    public void create(AuthUser user, String record) {
+    public void create(AuthUser user, String value) {
         log.info("Access user: {}", user.name());
-        RECORDS.add(record);
+        VALUES.add(value);
     }
 
     @Override
-    public void delete(AuthUser user, String record) {
+    public void delete(AuthUser user, String value) {
         log.info("Access user: {}", user.name());
-        RECORDS.remove(record);
+        VALUES.remove(value);
     }
+
+    @Override
+    public List<String> read(AuthUser user) {
+        log.info("Access user: {}", user.name());
+        return List.copyOf(VALUES);
+    }
+
 }
