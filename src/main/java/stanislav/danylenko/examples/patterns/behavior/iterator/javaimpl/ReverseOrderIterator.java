@@ -1,6 +1,7 @@
 package stanislav.danylenko.examples.patterns.behavior.iterator.javaimpl;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 public class ReverseOrderIterator<T> implements Iterator<T> {
 
@@ -25,7 +26,7 @@ public class ReverseOrderIterator<T> implements Iterator<T> {
         nextCalled = true;
 
         if (currentIndex < 0) {
-            throw new IllegalStateException("No more elements");
+            throw new NoSuchElementException("No more elements");
         }
 
         lastReturnedIndex = currentIndex;

@@ -1,5 +1,7 @@
 package stanislav.danylenko.examples;
 
+import java.util.Iterator;
+
 import lombok.extern.slf4j.Slf4j;
 import stanislav.danylenko.examples.patterns.behavior.command.TextCommand;
 import stanislav.danylenko.examples.patterns.behavior.command.TextCommandExecutor;
@@ -7,21 +9,25 @@ import stanislav.danylenko.examples.patterns.behavior.command.TextObject;
 import stanislav.danylenko.examples.patterns.behavior.command.impl.CleanCommand;
 import stanislav.danylenko.examples.patterns.behavior.command.impl.ReplaceCommand;
 import stanislav.danylenko.examples.patterns.behavior.command.impl.TextObjectImpl;
+import stanislav.danylenko.examples.patterns.behavior.iterator.javaimpl.ReverseOrderList;
 
 @Slf4j
 public class Main {
 
     public static void main(String[] args) {
-        TextObject textObject = new TextObjectImpl("blablabla");
+        ReverseOrderList list = new ReverseOrderList();
+        list.add("1");
+        list.add("2");
+        list.add("3");
 
-        TextCommand textCommand1 = new CleanCommand(textObject, "a");
-        TextCommand textCommand2 = new ReplaceCommand(textObject, "b", "c");
+        Iterator iterator = list.iterator();
+        iterator.next();
+        iterator.remove();
+        iterator.remove();
 
-        TextCommandExecutor executor = new TextCommandExecutor();
-        String res1 = executor.executeTextCommand(textCommand1);
-        String res2 = executor.executeTextCommand(textCommand2);
-        // anonymus
-        String res3 = executor.executeTextCommand(() -> textObject.getClass() + "");
+        while (iterator.hasNext()) {
+            log.info("Item: {}", iterator.next());
+        }
+
     }
-
 }
